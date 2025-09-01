@@ -75,7 +75,7 @@ SELECT mrp, discountedSellingPrice FROM zepto;
 
 -- data analysis
 
--- Q1. Find the top 10 best-value products based on the discount percentage.
+--  Find the top 10 best-value products based on the discount percentage.
 SELECT DISTINCT name, mrp, discountPercent
 FROM zepto
 ORDER BY discountPercent DESC
@@ -95,13 +95,13 @@ FROM zepto
 GROUP BY category
 ORDER BY total_revenue;
 
--- Q4. Find all products where MRP is greater than ₹500 and discount is less than 10%.
+--  Find all products where MRP is greater than ₹500 and discount is less than 10%.
 SELECT DISTINCT name, mrp, discountPercent
 FROM zepto
 WHERE mrp > 500 AND discountPercent < 10
 ORDER BY mrp DESC, discountPercent DESC;
 
--- Q5. Identify the top 5 categories offering the highest average discount percentage.
+--  Identify the top 5 categories offering the highest average discount percentage.
 SELECT category,
 ROUND(AVG(discountPercent),2) AS avg_discount
 FROM zepto
@@ -109,7 +109,7 @@ GROUP BY category
 ORDER BY avg_discount DESC
 LIMIT 5;
 
--- Q6. Find the price per gram for products above 100g and sort by best value.
+--  Find the price per gram for products above 100g and sort by best value.
 SELECT DISTINCT name, weightInGms, discountedSellingPrice,
 ROUND(discountedSellingPrice/weightInGms,2) AS price_per_gram
 FROM zepto
