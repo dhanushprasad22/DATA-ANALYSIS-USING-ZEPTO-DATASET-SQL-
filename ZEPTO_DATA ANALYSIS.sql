@@ -1,6 +1,7 @@
 drop table if exists zepto;
 
 create table zepto (
+sku_id Numeric,
 category VARCHAR(120),
 name VARCHAR(150) NOT NULL,
 mrp NUMERIC(8,2),
